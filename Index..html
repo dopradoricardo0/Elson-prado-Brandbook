@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elson Prado — Brandbook Premium</title>
+<meta name="description" content="Elson Prado — Palestrante · Educador de Trânsito · Paraná. Quem conhece o trânsito, conhece o ser humano.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;1,9..40,200&display=swap">
+
+<style>
+/* ══════════════════════════════════════════════════════════
+   RESET & ROOT
+══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0B1C2E;
+  --navy-mid:   #132540;
+  --navy-deep:  #070E18;
+  --navy-glow:  #1A3352;
+  --black:      #080C10;
+  --white:      #F8F6F2;
+  --offwhite:   #EDE9E1;
+  --gold:       #B8922A;
+  --gold-light: #D4A93C;
+  --gold-bright:#E8B84B;
+  --gold-pale:  #F0DFA070;
+  --muted:      #8A9AB0;
+  --muted-dark: #4A5A6A;
+  --traffic:    #F5C518;
+  --serif:      'Cormorant Garamond', Georgia, serif;
+  --serif2:     'Crimson Pro', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 300;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--navy-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 1px; }
+
+/* ══════════════════════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(7,14,24,0.9), transparent);
+  backdrop-filter: blur(0px);
+  transition: all 0.6s ease;
+}
+nav.scrolled {
+  background: rgba(7,14,24,0.92);
+  backdrop-filter: blur(20px);
+  padding: 16px 48px;
+  border-bottom: 1px solid rgba(184,146,42,0.1);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.nav-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  nav { padding: 20px 24px; }
+  nav.scrolled { padding: 14px 24px; }
+  .nav-links { display: none; }
+  .nav-menu-btn { display: flex; }
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(7,14,24,0.98);
+  backdrop-filter: blur(30px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+
+/* ══════════════════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 65% 40%, rgba(26,51,82,0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 80% at 30% 100%, rgba(7,14,24,0.9) 0%, transparent 60%),
+    linear-gradient(160deg, var(--navy-deep) 0%, #0d2035 40%, #0a1a2e 100%);
+}
+
+/* Cinematic photo placeholder (will be replaced with real photo) */
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero-photo-img {
+  width: 62%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.08) brightness(0.82) saturate(0.75);
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.95) 40%, transparent 100%),
+              linear-gradient(to top, rgba(0,0,0,1) 0%, transparent 30%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.95) 40%, transparent 100%);
+}
+
+/* Placeholder when no photo */
+.hero-photo-placeholder {
+  width: 55%;
+  height: 92%;
+  background: linear-gradient(160deg, var(--navy-glow) 0%, var(--navy-mid) 50%, var(--navy-deep) 100%);
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+.hero-photo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(7,14,24,0.9) 100%);
+}
+.hero-photo-placeholder::after {
+  content: 'EP';
+  font-family: var(--serif);
+  font-size: 180px;
+  font-weight: 300;
+  color: rgba(184,146,42,0.08);
+  letter-spacing: 20px;
+}
+
+/* Overlay layers */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--navy-deep) 0%, rgba(8,12,16,0.6) 45%, transparent 80%),
+    linear-gradient(to top, var(--navy-deep) 0%, transparent 35%);
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 200px rgba(0,0,0,0.6);
+  pointer-events: none;
+}
+
+/* Gold light beam */
+.hero-beam {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(184,146,42,0.15) 30%, rgba(184,146,42,0.08) 70%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0;
+  animation: particleFloat var(--duration, 8s) ease-in-out var(--delay, 0s) infinite;
+}
+@keyframes particleFloat {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: var(--max-opacity, 0.4); }
+  80% { opacity: var(--max-opacity, 0.4); }
+  100% { opacity: 0; transform: translateY(-80px) scale(1); }
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 48px 72px;
+  max-width: 760px;
+}
+
+.hero-eyebrow {
+  font-size: 9px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 8vw, 92px);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease 0.6s forwards;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease 1s forwards;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  right: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeIn 1s ease 1.8s forwards;
+  z-index: 2;
+}
+.hero-scroll span {
+  font-size: 8px;
+  letter-spacing: 4px;
+  color: var(--muted-dark);
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Gold accent bar */
+.hero-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, var(--gold-bright) 40%, var(--gold) 70%, transparent 100%);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .hero-content { padding: 0 24px 80px; }
+  .hero-photo-placeholder { width: 100%; }
+  .hero-title { font-size: clamp(40px, 11vw, 64px); }
+  .hero-scroll { right: 24px; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SHARED SECTION STYLES
+══════════════════════════════════════════════════════════ */
+section { position: relative; overflow: hidden; }
+
+.section-tag {
+  font-size: 8px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.section-tag::after {
+  content: '';
+  flex: 1;
+  max-width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.gold-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold-bright), var(--gold));
+  box-shadow: 0 0 8px rgba(184,146,42,0.4);
+  margin: 24px 0;
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.35s; }
+.reveal-delay-4 { transition-delay: 0.5s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONCEITO
+══════════════════════════════════════════════════════════ */
+.conceito {
+  min-height: 100vh;
+  background: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  padding: 120px 48px;
+}
+
+.conceito-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.conceito-ghost {
+  position: absolute;
+  top: -60px;
+  right: -20px;
+  font-family: var(--serif);
+  font-size: clamp(140px, 22vw, 220px);
+  font-weight: 300;
+  color: rgba(184,146,42,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -5px;
+}
+
+.conceito-num {
+  font-family: var(--serif);
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin-bottom: 48px;
+}
+
+.conceito-text {
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--white);
+  letter-spacing: -0.5px;
+  max-width: 780px;
+}
+.conceito-text em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.conceito-body {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 540px;
+}
+
+.conceito-pillars {
+  margin-top: 64px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.pillar {
+  flex: 1;
+  min-width: 140px;
+}
+.pillar-label {
+  font-size: 8px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.pillar-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(184,146,42,0.3);
+  margin-bottom: 12px;
+}
+.pillar-text {
+  font-family: var(--serif2);
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .conceito { padding: 100px 24px; }
+  .conceito-pillars { gap: 32px; flex-direction: column; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   POSICIONAMENTO
+══════════════════════════════════════════════════════════ */
+.posicionamento {
+  background: var(--black);
+  padding: 120px 48px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.pos-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pos-header {
+  margin-bottom: 80px;
+}
+
+.pos-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--white);
+}
+.pos-title em { font-style: italic; color: var(--gold); }
+
+.pos-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+}
+
+.pos-block {
+  background: var(--black);
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.pos-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.pos-block:hover::before { opacity: 1; }
+.pos-block:hover { background: rgba(11,28,46,0.6); }
+
+.pos-block-num {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 300;
+  color: rgba(184,146,42,0.08);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.pos-block-label {
+  font-size: 8px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.pos-block-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.pos-block-text {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .posicionamento { padding: 100px 24px; }
+  .pos-layout { grid-template-columns: 1fr; }
+  .pos-block { padding: 36px 24px; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   IDENTIDADE VISUAL
+══════════════════════════════════════════════════════════ */
+.identidade {
+  background: var(--navy-deep);
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.identidade-header {
+  padding: 0 48px;
+  margin-bottom: 80px;
+}
+
+/* Color strip */
+.color-strip {
+  display: flex;
+  height: 220px;
+  overflow: hidden;
+}
+.color-swatch {
+  flex: 1;
+  position: relative;
+  transition: flex 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  overflow: hidden;
+  cursor: pointer;
+}
+.color-swatch:hover { flex: 3; }
+.color-swatch-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.color-swatch:hover .color-swatch-inner { opacity: 1; }
+.color-swatch-name {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.color-swatch-hex {
+  font-family: var(--serif);
+  font-size: 14px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Typography showcase */
+.type-showcase {
+  padding: 80px 48px 0;
+}
+
+.type-specimen {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.type-meta {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--muted-dark);
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+.type-display {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.type-display-italic {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.type-display-small {
+  font-size: clamp(18px, 2.5vw, 28px);
+  letter-spacing: 4px;
+  color: var(--muted);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: var(--sans);
+}
+
+@media (max-width: 768px) {
+  .identidade-header, .type-showcase { padding: 0 24px; }
+  .type-specimen { grid-template-columns: 1fr; gap: 16px; }
+  .color-swatch { flex: none; width: 100%; height: 60px; }
+  .color-strip { flex-direction: column; height: auto; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   FRASE QUOTE FULLSCREEN
+══════════════════════════════════════════════════════════ */
+.frase-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 48px;
+  position: relative;
+  background: var(--black);
+}
+
+.frase-bg-num {
+  position: absolute;
+  font-family: var(--serif);
+  font-size: clamp(200px, 35vw, 400px);
+  font-weight: 300;
+  color: rgba(184,146,42,0.03);
+  line-height: 1;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+}
+
+.frase-quote {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5.5vw, 68px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--white);
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+.frase-quote em { font-style: italic; color: var(--gold-light); }
+
+.frase-attr {
+  margin-top: 32px;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .frase-section { padding: 80px 24px; min-height: 60vh; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   DIREÇÃO FOTOGRÁFICA
+══════════════════════════════════════════════════════════ */
+.fotografia {
+  background: var(--navy-deep);
+  padding: 120px 0;
+}
+
+.foto-header {
+  padding: 0 48px;
+  margin-bottom: 64px;
+}
+
+.foto-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 3px;
+}
+
+.foto-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-mid);
+  cursor: pointer;
+}
+
+.foto-item-1 { grid-column: 1; grid-row: 1 / 3; aspect-ratio: 3/4; }
+.foto-item-2 { grid-column: 2; grid-row: 1; aspect-ratio: 4/3; }
+.foto-item-3 { grid-column: 3; grid-row: 1; aspect-ratio: 4/3; }
+.foto-item-4 { grid-column: 2; grid-row: 2; aspect-ratio: 4/3; }
+.foto-item-5 { grid-column: 3; grid-row: 2; aspect-ratio: 4/3; }
+
+.foto-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient overlays for different visual feels */
+.foto-item-1 .foto-placeholder {
+  background: linear-gradient(160deg, #1E3A5A 0%, #0d1e30 60%, #070e18 100%);
+}
+.foto-item-2 .foto-placeholder {
+  background: linear-gradient(140deg, #132540 0%, #080C10 100%);
+}
+.foto-item-3 .foto-placeholder {
+  background: linear-gradient(140deg, #1a2a3a 0%, #0a1520 100%);
+}
+.foto-item-4 .foto-placeholder {
+  background: linear-gradient(140deg, #0f1c2a 0%, #070e18 100%);
+}
+.foto-item-5 .foto-placeholder {
+  background: linear-gradient(140deg, #162030 0%, #0a1420 100%);
+}
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.8) saturate(0.7);
+  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.6s;
+}
+.foto-item:hover img {
+  transform: scale(1.04);
+  filter: contrast(1.12) brightness(0.85) saturate(0.8);
+}
+
+.foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7,14,24,0.85) 0%, transparent 50%);
+  transition: opacity 0.4s;
+}
+
+.foto-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+.foto-label-tag {
+  font-size: 7px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.foto-label-title {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--white);
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.foto-placeholder-icon {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.foto-placeholder-icon::after {
+  content: attr(data-letter);
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 300;
+  color: rgba(184,146,42,0.07);
+}
+
+@media (max-width: 768px) {
+  .foto-header { padding: 0 24px; }
+  .foto-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .foto-item-1 { grid-column: 1 / 3; grid-row: 1; aspect-ratio: 4/3; }
+  .foto-item-2, .foto-item-3, .foto-item-4, .foto-item-5 {
+    grid-column: auto; grid-row: auto; aspect-ratio: 1;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PRESENÇA DIGITAL
+══════════════════════════════════════════════════════════ */
+.digital {
+  background: var(--black);
+  padding: 120px 48px;
+}
+
+.digital-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.digital-header {
+  margin-bottom: 64px;
+}
+
+.digital-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.digital-text-block { }
+
+.digital-subtitle {
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+
+.digital-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+.digital-rules { list-style: none; }
+.digital-rule {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.rule-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.rule-text {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.rule-text strong {
+  color: var(--white);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* Instagram feed mockup */
+.ig-mockup {
+  background: var(--navy-deep);
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(184,146,42,0.12);
+}
+
+.ig-header {
+  padding: 20px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.ig-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--navy-glow) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy-deep);
+  border: 1.5px solid rgba(184,146,42,0.5);
+  flex-shrink: 0;
+}
+
+.ig-info { flex: 1; }
+.ig-name {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.ig-handle {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.ig-follow {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  border: 1px solid rgba(184,146,42,0.4);
+  padding: 5px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.ig-follow:hover {
+  background: rgba(184,146,42,0.1);
+}
+
+.ig-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.ig-post {
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ig-post-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: filter 0.3s;
+}
+.ig-post:hover .ig-post-bg { filter: brightness(1.1); }
+
+.ig-post-text {
+  font-family: var(--serif);
+  font-size: 10px;
+  font-style: italic;
+  color: var(--white);
+  text-align: center;
+  padding: 12px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+.ig-post-stat {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.ig-post-stat-sub {
+  font-size: 6px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.ig-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 16px 20px;
+}
+.ig-stat {
+  text-align: center;
+}
+.ig-stat-num {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--white);
+}
+.ig-stat-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .digital { padding: 100px 24px; }
+  .digital-layout { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PALESTRAS SECTION
+══════════════════════════════════════════════════════════ */
+.palestras {
+  background: var(--navy-deep);
+  padding: 120px 0;
+}
+
+.palestras-header {
+  padding: 0 48px;
+  margin-bottom: 80px;
+}
+
+.palestras-fullwidth {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+  background: linear-gradient(140deg, #1E3A5A 0%, #0B1C2E 50%, #070E18 100%);
+  display: flex;
+  align-items: center;
+}
+
+.palestras-fullwidth-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(7,14,24,0.9) 0%, rgba(7,14,24,0.4) 60%, transparent 100%);
+}
+
+.palestras-fullwidth-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 48px;
+  max-width: 600px;
+}
+
+.palestras-big-text {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.palestras-big-text em { font-style: italic; color: var(--gold-light); }
+
+.palestras-sub {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.palestras-types {
+  padding: 64px 48px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.palestra-type {
+  background: var(--navy-deep);
+  padding: 40px 28px;
+  border-top: 2px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.palestra-type:hover {
+  border-top-color: var(--gold);
+  background: rgba(11,28,46,0.8);
+}
+.palestra-type-icon {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin-bottom: 24px;
+}
+.palestra-type-label {
+  font-size: 7px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.palestra-type-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.palestra-type-text {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .palestras-header, .palestras-types { padding-left: 24px; padding-right: 24px; }
+  .palestras-fullwidth-content { padding: 0 24px; }
+  .palestras-types { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .palestras-types { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   FRASES CINEMATOGRÁFICAS
+══════════════════════════════════════════════════════════ */
+.frases-section {
+  background: var(--black);
+  padding: 0;
+}
+
+.frase-full {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 48px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.frase-full:nth-child(even) {
+  background: var(--navy-deep);
+}
+
+.frase-full-inner {
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.frase-number {
+  font-family: var(--serif);
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin-bottom: 32px;
+  display: block;
+}
+
+.frase-main {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--white);
+  position: relative;
+}
+.frase-main em { font-style: italic; color: var(--gold-light); }
+.frase-main::before {
+  content: '\201C';
+  font-size: 0.5em;
+  color: var(--gold);
+  opacity: 0.4;
+  position: absolute;
+  left: -0.3em;
+  top: -0.1em;
+  line-height: 1;
+}
+
+.frase-context {
+  margin-top: 36px;
+  font-size: 11px;
+  color: var(--muted-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.frase-bg-word {
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-family: var(--serif);
+  font-size: clamp(120px, 20vw, 200px);
+  font-weight: 300;
+  color: rgba(184,146,42,0.025);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .frase-full { padding: 80px 24px; min-height: 60vh; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   REFERÊNCIAS
+══════════════════════════════════════════════════════════ */
+.referencias {
+  background: var(--navy-deep);
+  padding: 120px 48px;
+}
+
+.referencias-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ref-header { margin-bottom: 80px; }
+
+.ref-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.mood-words {
+  margin-top: 80px;
+  position: relative;
+}
+
+.mood-word {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -2px;
+  transition: all 0.4s ease;
+  cursor: default;
+}
+.mood-word:hover { color: var(--gold-light) !important; transform: translateX(12px); }
+
+.mood-w-1 { font-size: clamp(48px,9vw,96px); color: var(--white); opacity: 1; }
+.mood-w-2 { font-size: clamp(28px,4.5vw,56px); color: var(--muted); opacity: 0.7; padding-left: 60px; }
+.mood-w-3 { font-size: clamp(60px,11vw,120px); color: var(--white); opacity: 0.85; letter-spacing: -3px; }
+.mood-w-4 { font-size: clamp(20px,3vw,36px); color: var(--gold); opacity: 0.7; padding-left: 120px; letter-spacing: 4px; font-style: italic; }
+.mood-w-5 { font-size: clamp(40px,7vw,80px); color: var(--muted); opacity: 0.5; }
+.mood-w-6 { font-size: clamp(72px,13vw,140px); color: var(--white); opacity: 0.9; letter-spacing: -4px; }
+.mood-w-7 { font-size: clamp(16px,2vw,22px); color: var(--muted-dark); opacity: 0.6; padding-left: 40px; letter-spacing: 6px; text-transform: uppercase; }
+
+.ref-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.ref-card {
+  background: var(--navy-deep);
+  padding: 40px 32px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+.ref-card:hover {
+  border-bottom-color: var(--gold);
+  background: rgba(11,28,46,0.7);
+}
+.ref-card-brand {
+  font-size: 8px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.ref-card-desc {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .referencias { padding: 100px 24px; }
+  .mood-w-2, .mood-w-4 { padding-left: 24px; }
+  .mood-w-7 { padding-left: 12px; }
+  .ref-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   ENCERRAMENTO
+══════════════════════════════════════════════════════════ */
+.encerramento {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+
+.enc-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 70% 50%, rgba(26,51,82,0.6) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 30% 100%, rgba(184,146,42,0.06) 0%, transparent 60%),
+    linear-gradient(160deg, var(--navy-deep) 0%, #0d2035 60%, #070e18 100%);
+}
+
+.enc-photo-area {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enc-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, var(--navy-glow) 0%, var(--navy-mid) 60%, var(--navy-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.enc-photo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, transparent 30%, var(--navy-deep) 100%);
+}
+
+.enc-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 48px;
+  max-width: 600px;
+}
+
+.enc-label {
+  font-size: 8px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.enc-number {
+  font-family: var(--serif);
+  font-size: clamp(80px, 16vw, 160px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 0.9;
+  letter-spacing: -5px;
+  margin-bottom: 8px;
+}
+.enc-number-plus {
+  color: var(--gold);
+  font-size: 0.5em;
+  vertical-align: super;
+}
+
+.enc-title {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 300;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 48px;
+}
+
+.enc-tagline {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(184,146,42,0.2);
+}
+.enc-tagline em { font-style: italic; color: var(--gold-light); }
+
+@media (max-width: 768px) {
+  .enc-content { padding: 80px 24px; max-width: 100%; }
+  .enc-photo-area { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONTATO
+══════════════════════════════════════════════════════════ */
+.contato {
+  background: var(--black);
+  padding: 120px 48px;
+  border-top: 1px solid rgba(184,146,42,0.1);
+}
+
+.contato-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contato-header {
+  margin-bottom: 72px;
+}
+
+.contato-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.contato-title em { font-style: italic; color: var(--gold); }
+
+.contato-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
+  transition: all 0.3s;
+  group: true;
+}
+.channel:hover .channel-name { color: var(--gold); }
+.channel:hover .channel-arrow { transform: translateX(8px); opacity: 1; }
+
+.channel-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.channel-num {
+  font-family: var(--serif);
+  font-size: 12px;
+  color: var(--muted-dark);
+  width: 20px;
+}
+.channel-info { }
+.channel-label {
+  font-size: 8px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.channel-name {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 300;
+  color: var(--white);
+  transition: color 0.3s;
+  font-style: italic;
+}
+.channel-arrow {
+  color: var(--gold);
+  font-size: 20px;
+  opacity: 0.3;
+  transition: all 0.4s;
+}
+
+.contato-footer {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 300;
+}
+.footer-brand-name {
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+.footer-brand-sub {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.footer-copy {
+  font-size: 10px;
+  color: var(--muted-dark);
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .contato { padding: 100px 24px; }
+  .contato-footer { flex-direction: column; align-items: flex-start; }
+  .footer-copy { text-align: left; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   UTILITIES
+══════════════════════════════════════════════════════════ */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.text-gold { color: var(--gold); }
+.text-muted { color: var(--muted); }
+
+/* Gold dot accent */
+.gold-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px rgba(184,146,42,0.6);
+}
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold), var(--gold-bright));
+  z-index: 200;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(184,146,42,0.6);
+}
+
+/* Section separator */
+.sep {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184,146,42,0.3), transparent);
+}
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation -->
+<nav id="mainNav">
+  <div class="nav-logo">EP</div>
+  <ul class="nav-links">
+    <li><a href="#conceito">Conceito</a></li>
+    <li><a href="#identidade">Identidade</a></li>
+    <li><a href="#palestras">Palestras</a></li>
+    <li><a href="#frases">Frases</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#conceito" class="menu-link">Conceito</a>
+  <a href="#identidade" class="menu-link">Identidade</a>
+  <a href="#palestras" class="menu-link">Palestras</a>
+  <a href="#frases" class="menu-link">Frases</a>
+  <a href="#contato" class="menu-link">Contato</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Photo area -->
+  <div class="hero-photo">
+    <!-- REPLACE with real photo: <img class="hero-photo-img" src="foto-elson.jpg" alt="Elson Prado"> -->
+    <div class="hero-photo-placeholder"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-beam"></div>
+  <div class="hero-bar"></div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Elson Prado · Brandbook Premium · 2024</p>
+    <h1 class="hero-title">
+      Quem conhece<br>
+      o <em>trânsito,</em><br>
+      conhece o<br>
+      ser humano.
+    </h1>
+    <p class="hero-sub">Palestrante · Educador · Especialista em comportamento humano no trânsito.<br>Paraná, Brasil — 30 anos de estrada.</p>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONCEITO
+═══════════════════════════════════════════ -->
+<section class="conceito" id="conceito">
+  <div class="conceito-inner">
+    <div class="conceito-ghost">01</div>
+
+    <p class="conceito-num reveal">01 — Conceito da Marca</p>
+
+    <div class="gold-line reveal reveal-delay-1"></div>
+
+    <p class="conceito-text reveal reveal-delay-2">
+      A marca nasce da experiência de quem entende que
+      <em>o trânsito é o reflexo da sociedade.</em>
+      Três décadas observando o ser humano ao volante.
+    </p>
+
+    <p class="conceito-body reveal reveal-delay-3">
+      Elson Prado não é apenas um educador de trânsito.
+      É alguém que, ao longo de mais de 30 anos, aprendeu a ler
+      o comportamento humano através das escolhas que as pessoas fazem ao volante.
+      Sua marca carrega essa autoridade — construída em estrada,
+      consolidada em palco.
+    </p>
+
+    <div class="conceito-pillars reveal reveal-delay-4">
+      <div class="pillar">
+        <p class="pillar-label">Autoridade</p>
+        <div class="pillar-line"></div>
+        <p class="pillar-text">30 anos de experiência como educador e palestrante</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-label">Impacto</p>
+        <div class="pillar-line"></div>
+        <p class="pillar-text">Comportamento humano como centro da mensagem</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-label">Propósito</p>
+        <div class="pillar-line"></div>
+        <p class="pillar-text">Cada vida poupada é uma missão cumprida</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-label">Fé</p>
+        <div class="pillar-line"></div>
+        <p class="pillar-text">Valores cristãos como alicerce do olhar humano</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     POSICIONAMENTO
+═══════════════════════════════════════════ -->
+<section class="posicionamento" id="posicionamento">
+  <div class="pos-inner">
+    <div class="pos-header">
+      <div class="section-tag reveal">02 — Posicionamento</div>
+      <h2 class="pos-title reveal reveal-delay-1">
+        Onde a marca<br><em>se posiciona.</em>
+      </h2>
+    </div>
+
+    <div class="pos-layout reveal reveal-delay-2">
+      <div class="pos-block">
+        <div class="pos-block-num">01</div>
+        <p class="pos-block-label">Premium Corporativo</p>
+        <h3 class="pos-block-title">Palestrante de Elite</h3>
+        <p class="pos-block-text">Não é autoescola. Não é campanha governamental. É um especialista em comportamento humano que usa o trânsito como palco para transformar culturas organizacionais.</p>
+      </div>
+      <div class="pos-block">
+        <div class="pos-block-num">02</div>
+        <p class="pos-block-label">Especialidade Única</p>
+        <h3 class="pos-block-title">Comportamento Humano</h3>
+        <p class="pos-block-text">Enquanto outros falam de legislação e técnica, Elson Prado fala de caráter, responsabilidade, empatia. O trânsito como espelho da alma.</p>
+      </div>
+      <div class="pos-block">
+        <div class="pos-block-num">03</div>
+        <p class="pos-block-label">Autoridade Legítima</p>
+        <h3 class="pos-block-title">Três Décadas de Estrada</h3>
+        <p class="pos-block-text">Não é teoria — é vivência. Proprietário da Autoescola Prado, formou gerações de condutores antes de se tornar referência nacional em palestras.</p>
+      </div>
+      <div class="pos-block">
+        <div class="pos-block-num">04</div>
+        <p class="pos-block-label">Alcance Amplo</p>
+        <h3 class="pos-block-title">Empresas, Igrejas, Escolas</h3>
+        <p class="pos-block-text">A mensagem transcende ambientes. De salas executivas a comunidades de fé, a autoridade de Elson Prado se adapta sem perder profundidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FRASE CINEMATIC 1
+═══════════════════════════════════════════ -->
+<div class="frase-section">
+  <div class="frase-bg-num">30</div>
+  <div class="frase-full-inner reveal">
+    <div class="gold-line"></div>
+    <p class="frase-quote">
+      <em>"O volante também</em><br>
+      revela caráter."
+    </p>
+    <p class="frase-attr">Elson Prado — Educador de Trânsito</p>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ═══════════════════════════════════════════
+     IDENTIDADE VISUAL
+═══════════════════════════════════════════ -->
+<section class="identidade" id="identidade">
+  <div class="identidade-header">
+    <div class="section-tag reveal">03 — Identidade Visual</div>
+    <h2 class="reveal reveal-delay-1" style="font-family:var(--serif);font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--white);line-height:1.1;">
+      A linguagem visual<br><em style="color:var(--gold-light);font-style:italic;">da autoridade.</em>
+    </h2>
+  </div>
+
+  <!-- Color palette as material surfaces -->
+  <div class="color-strip reveal">
+    <div class="color-swatch" style="background:#0B1C2E;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#8A9AB0;">Navy Profundo</div>
+        <div class="color-swatch-hex" style="color:#8A9AB0;">#0B1C2E</div>
+      </div>
+    </div>
+    <div class="color-swatch" style="background:#080C10;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#8A9AB0;">Preto Sofisticado</div>
+        <div class="color-swatch-hex" style="color:#8A9AB0;">#080C10</div>
+      </div>
+    </div>
+    <div class="color-swatch" style="background:#1E3A5A;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#8A9AB0;">Azul Elite</div>
+        <div class="color-swatch-hex" style="color:#8A9AB0;">#1E3A5A</div>
+      </div>
+    </div>
+    <div class="color-swatch" style="background:#B8922A;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#080C10;">Dourado Discreto</div>
+        <div class="color-swatch-hex" style="color:#080C10;">#B8922A</div>
+      </div>
+    </div>
+    <div class="color-swatch" style="background:#F8F6F2;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#0B1C2E;">Off-White</div>
+        <div class="color-swatch-hex" style="color:#0B1C2E;">#F8F6F2</div>
+      </div>
+    </div>
+    <div class="color-swatch" style="background:#8A9AB0;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#080C10;">Azul Acinzentado</div>
+        <div class="color-swatch-hex" style="color:#080C10;">#8A9AB0</div>
+      </div>
+    </div>
+    <div class="color-swatch" style="background:#F5C518; max-width:60px; min-width:40px;">
+      <div class="color-swatch-inner" style="flex-direction:column;">
+        <div class="color-swatch-name" style="color:#080C10;font-size:6px;">Amarelo</div>
+        <div class="color-swatch-hex" style="color:#080C10;font-size:6px;">#F5C518</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="type-showcase">
+    <div class="type-specimen reveal">
+      <div class="type-meta">
+        Fonte Principal<br>Cormorant Garamond<br>Light · Italic · SemiBold<br><br>Títulos, citações,<br>assinaturas
+      </div>
+      <div class="type-display type-display-italic">Elson Prado</div>
+    </div>
+
+    <div class="type-specimen reveal reveal-delay-1">
+      <div class="type-meta">
+        Fonte de Apoio<br>DM Sans<br>Light · Regular<br><br>Corpo, labels,<br>legendas, dados
+      </div>
+      <div class="type-display-small">EDUCADOR · PALESTRANTE · PARANÁ</div>
+    </div>
+
+    <div class="type-specimen reveal reveal-delay-2">
+      <div class="type-meta">
+        Hierarquia<br>Tipográfica<br>Premium<br><br>Composição<br>editorial
+      </div>
+      <div>
+        <div class="type-display" style="font-size:clamp(24px,4vw,48px);margin-bottom:12px;">Comportamento</div>
+        <div class="type-display-small" style="font-size:12px;color:var(--gold);letter-spacing:6px;">HUMANO NO TRÂNSITO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     DIREÇÃO FOTOGRÁFICA
+═══════════════════════════════════════════ -->
+<section class="fotografia" id="fotografia">
+  <div class="foto-header">
+    <div class="section-tag reveal">04 — Direção Fotográfica</div>
+    <h2 class="reveal reveal-delay-1" style="font-family:var(--serif);font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--white);line-height:1.1;">
+      Imagens que<br><em style="color:var(--gold-light);font-style:italic;">transmitem presença.</em>
+    </h2>
+  </div>
+
+  <div class="foto-grid reveal">
+    <!-- ITEM 1 — Hero portrait -->
+    <div class="foto-item foto-item-1">
+      <!-- <img src="retrato-principal.jpg" alt="Elson Prado — Retrato Principal"> -->
+      <div class="foto-placeholder-icon" data-letter="EP" style="background:linear-gradient(160deg,#1E3A5A,#070E18);height:100%;min-height:400px;"></div>
+      <div class="foto-overlay"></div>
+      <div class="foto-label">
+        <p class="foto-label-tag">Retrato · Studio</p>
+        <p class="foto-label-title">Autoridade.<br>Presença.</p>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="foto-item foto-item-2">
+      <div class="foto-placeholder-icon" data-letter="" style="background:linear-gradient(140deg,#132540,#080C10);height:100%;min-height:200px;"></div>
+      <div class="foto-overlay"></div>
+      <div class="foto-label">
+        <p class="foto-label-tag">Palco</p>
+        <p class="foto-label-title">Palestra em ação</p>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="foto-item foto-item-3">
+      <div class="foto-placeholder-icon" data-letter="" style="background:linear-gradient(140deg,#1a2a3a,#0a1520);height:100%;min-height:200px;"></div>
+      <div class="foto-overlay"></div>
+      <div class="foto-label">
+        <p class="foto-label-tag">Bastidores</p>
+        <p class="foto-label-title">Preparação</p>
+      </div>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="foto-item foto-item-4">
+      <div class="foto-placeholder-icon" data-letter="" style="background:linear-gradient(140deg,#0f1c2a,#070e18);height:100%;min-height:200px;"></div>
+      <div class="foto-overlay"></div>
+      <div class="foto-label">
+        <p class="foto-label-tag">Conexão</p>
+        <p class="foto-label-title">Humanidade real</p>
+      </div>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="foto-item foto-item-5">
+      <!-- Grading spec item -->
+      <div style="background:linear-gradient(140deg,#162030,#0a1420);height:100%;min-height:200px;padding:20px;display:flex;align-items:flex-end;">
+        <div>
+          <p style="font-size:7px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">Color Grading</p>
+          <p style="font-family:var(--serif);font-size:13px;color:var(--muted);font-style:italic;line-height:1.6;">Contraste premium.<br>Tons navy.<br>Luz quente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PRESENÇA DIGITAL
+═══════════════════════════════════════════ -->
+<section class="digital" id="digital">
+  <div class="digital-inner">
+    <div class="digital-header">
+      <div class="section-tag reveal">05 — Presença Digital</div>
+      <h2 class="reveal reveal-delay-1" style="font-family:var(--serif);font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--white);line-height:1.1;">
+        Autoridade<br><em style="color:var(--gold-light);font-style:italic;">com propósito.</em>
+      </h2>
+    </div>
+
+    <div class="digital-layout">
+      <div class="digital-text-block reveal">
+        <h3 class="digital-subtitle">A marca digital de Elson Prado é extensão natural da autoridade presencial.</h3>
+
+        <p class="digital-body">Cada post carrega o peso de 30 anos de experiência. Cada caption é uma aula. Cada visual comunica: "Estou aqui para transformar, não apenas informar."</p>
+
+        <ul class="digital-rules">
+          <li class="digital-rule">
+            <div class="rule-dot"></div>
+            <div class="rule-text">
+              <strong>Visual sempre escuro</strong>
+              Fundo navy ou preto em 100% das publicações. Consistência absoluta.
+            </div>
+          </li>
+          <li class="digital-rule">
+            <div class="rule-dot"></div>
+            <div class="rule-text">
+              <strong>Tipografia editorial</strong>
+              Cormorant para citações impactantes. DM Sans para informações. Nunca misturar mais de dois pesos.
+            </div>
+          </li>
+          <li class="digital-rule">
+            <div class="rule-dot"></div>
+            <div class="rule-text">
+              <strong>Dourado como privilégio</strong>
+              A cor dourada aparece apenas como destaque máximo — nunca como decoração.
+            </div>
+          </li>
+          <li class="digital-rule">
+            <div class="rule-dot"></div>
+            <div class="rule-text">
+              <strong>Frases como obras</strong>
+              Uma frase por post. Sem excesso de informação. O espaço negativo é intencional.
+            </div>
+          </li>
+          <li class="digital-rule">
+            <div class="rule-dot"></div>
+            <div class="rule-text">
+              <strong>Amarelo trânsito: só uma vez</strong>
+              O ponto amarelo existe em um único elemento por publicação — jamais repetido.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ig-mockup reveal reveal-delay-2">
+        <div class="ig-header">
+          <div class="ig-avatar">EP</div>
+          <div class="ig-info">
+            <div class="ig-name">elsonprado.palestrante</div>
+            <div class="ig-handle">Educador de Trânsito · Paraná</div>
+          </div>
+          <div class="ig-follow">Seguir</div>
+        </div>
+
+        <div class="ig-feed">
+          <!-- Post 1: Citação -->
+          <div class="ig-post">
+            <div class="ig-post-bg" style="background:linear-gradient(160deg,#132540,#080C10);width:100%;padding:16px;flex-direction:column;justify-content:center;align-items:center;min-height:120px;">
+              <div class="ig-post-text">"Dirigir é um ato de responsabilidade com o próximo."</div>
+            </div>
+          </div>
+          <!-- Post 2: Número -->
+          <div class="ig-post">
+            <div class="ig-post-bg" style="background:#080C10;flex-direction:column;align-items:center;justify-content:center;min-height:120px;">
+              <div class="ig-post-stat">30+</div>
+              <div class="ig-post-stat-sub">anos de experiência</div>
+            </div>
+          </div>
+          <!-- Post 3 -->
+          <div class="ig-post">
+            <div class="ig-post-bg" style="background:linear-gradient(140deg,#0B1C2E,#070E18);padding:16px;flex-direction:column;justify-content:flex-end;align-items:flex-start;min-height:120px;">
+              <div style="width:20px;height:1px;background:var(--gold);margin-bottom:8px;"></div>
+              <div class="ig-post-text" style="text-align:left;">Palestra:<br>Direção Defensiva</div>
+            </div>
+          </div>
+          <!-- Post 4 -->
+          <div class="ig-post">
+            <div class="ig-post-bg" style="background:linear-gradient(160deg,#1a2a3a,#070E18);padding:16px;flex-direction:column;justify-content:center;align-items:center;min-height:120px;">
+              <div class="ig-post-text">"O trânsito começa dentro de nós."</div>
+            </div>
+          </div>
+          <!-- Post 5 -->
+          <div class="ig-post">
+            <div class="ig-post-bg" style="background:#070E18;flex-direction:column;align-items:center;justify-content:center;min-height:120px;">
+              <div style="font-family:var(--serif);font-size:24px;color:rgba(184,146,42,0.9);font-weight:300;">EP</div>
+              <div style="width:24px;height:1px;background:var(--gold);opacity:0.4;margin:6px 0;"></div>
+              <div style="font-size:6px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;">Elson Prado</div>
+            </div>
+          </div>
+          <!-- Post 6 -->
+          <div class="ig-post">
+            <div class="ig-post-bg" style="background:linear-gradient(160deg,#132540,#0B1C2E);padding:16px;flex-direction:column;justify-content:flex-end;min-height:120px;">
+              <div style="font-size:6px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;">Conscientização</div>
+              <div class="ig-post-text" style="text-align:left;font-size:9px;">Valores humanos no trânsito</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ig-stats">
+          <div class="ig-stat">
+            <div class="ig-stat-num">847</div>
+            <div class="ig-stat-label">Posts</div>
+          </div>
+          <div class="ig-stat">
+            <div class="ig-stat-num">12.4K</div>
+            <div class="ig-stat-label">Seguidores</div>
+          </div>
+          <div class="ig-stat">
+            <div class="ig-stat-num">30+</div>
+            <div class="ig-stat-label">Anos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PALESTRAS
+═══════════════════════════════════════════ -->
+<section class="palestras" id="palestras">
+  <div class="palestras-header">
+    <div class="section-tag reveal">06 — Palestras</div>
+    <h2 class="reveal reveal-delay-1" style="font-family:var(--serif);font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--white);line-height:1.1;">
+      Experiências que<br><em style="color:var(--gold-light);font-style:italic;">transformam culturas.</em>
+    </h2>
+  </div>
+
+  <div class="palestras-fullwidth reveal">
+    <div class="palestras-fullwidth-overlay"></div>
+    <!-- <img src="palestra-acao.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.7) saturate(0.6);"> -->
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1E3A5A 0%,#0B1C2E 40%,#070E18 100%);"></div>
+    <div class="palestras-fullwidth-content">
+      <div class="palestras-big-text">
+        Uma palestra que<br><em>muda comportamentos,</em><br>salva vidas.
+      </div>
+      <p class="palestras-sub">
+        Cada sessão é construída para ir além da informação técnica —
+        tocando o ponto onde o conhecimento encontra a consciência.
+      </p>
+    </div>
+  </div>
+
+  <div class="palestras-types reveal">
+    <div class="palestra-type">
+      <div class="palestra-type-icon"></div>
+      <p class="palestra-type-label">Corporativo</p>
+      <h3 class="palestra-type-title">Empresas e Frotas</h3>
+      <p class="palestra-type-text">Para equipes que precisam entender que segurança no trânsito é cultura organizacional, não apenas norma.</p>
+    </div>
+    <div class="palestra-type">
+      <div class="palestra-type-icon"></div>
+      <p class="palestra-type-label">Educacional</p>
+      <h3 class="palestra-type-title">Escolas e Jovens</h3>
+      <p class="palestra-type-text">Formando a consciência dos novos condutores antes mesmo de chegarem ao volante. Prevenção genuína.</p>
+    </div>
+    <div class="palestra-type">
+      <div class="palestra-type-icon"></div>
+      <p class="palestra-type-label">Comunidade de Fé</p>
+      <h3 class="palestra-type-title">Igrejas e Grupos</h3>
+      <p class="palestra-type-text">Trânsito e valores cristãos — uma conexão profunda entre o amor ao próximo e o respeito nas vias.</p>
+    </div>
+    <div class="palestra-type">
+      <div class="palestra-type-icon"></div>
+      <p class="palestra-type-label">Eventos</p>
+      <h3 class="palestra-type-title">Conferências e Feiras</h3>
+      <p class="palestra-type-text">Keynote speaker para eventos de mobilidade, segurança viária, RH e desenvolvimento humano.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FRASES CINEMATOGRÁFICAS
+═══════════════════════════════════════════ -->
+<section class="frases-section" id="frases">
+  <div class="frase-full">
+    <div class="frase-bg-word">Vida</div>
+    <div class="frase-full-inner reveal">
+      <span class="frase-number">— 01</span>
+      <p class="frase-main">
+        "O volante também<br><em>revela caráter."</em>
+      </p>
+      <p class="frase-context">Abertura de palestra · Conscientização</p>
+    </div>
+  </div>
+
+  <div class="frase-full">
+    <div class="frase-bg-word">Estrada</div>
+    <div class="frase-full-inner reveal">
+      <span class="frase-number">— 02</span>
+      <p class="frase-main">
+        "Antes de chegar ao volante,<br>chegamos à nossa<br><em>consciência."</em>
+      </p>
+      <p class="frase-context">Reflexão filosófica · Posts e palestras</p>
+    </div>
+  </div>
+
+  <div class="frase-full">
+    <div class="frase-bg-word">Respeito</div>
+    <div class="frase-full-inner reveal">
+      <span class="frase-number">— 03</span>
+      <p class="frase-main">
+        "O respeito pela vida é um<br>mandamento — <em>no trânsito</em><br>também."
+      </p>
+      <p class="frase-context">Valores cristãos · Igrejas e comunidades</p>
+    </div>
+  </div>
+
+  <div class="frase-full">
+    <div class="frase-bg-word">Humano</div>
+    <div class="frase-full-inner reveal">
+      <span class="frase-number">— 04</span>
+      <p class="frase-main">
+        "Cada decisão ao volante<br>pode mudar uma história<br><em>para sempre."</em>
+      </p>
+      <p class="frase-context">Impacto emocional · Conscientização</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     REFERÊNCIAS
+═══════════════════════════════════════════ -->
+<section class="referencias" id="referencias">
+  <div class="referencias-inner">
+    <div class="ref-header">
+      <div class="section-tag reveal">07 — Referências & Tom</div>
+      <h2 class="ref-title reveal reveal-delay-1">
+        A estética que<br><em style="font-style:italic;color:var(--gold-light);">inspira a marca.</em>
+      </h2>
+    </div>
+
+    <!-- Moodboard words -->
+    <div class="mood-words reveal">
+      <span class="mood-word mood-w-1">AUTORIDADE</span>
+      <span class="mood-word mood-w-2">sabedoria</span>
+      <span class="mood-word mood-w-3">CONFIANÇA</span>
+      <span class="mood-word mood-w-4">propósito</span>
+      <span class="mood-word mood-w-5">EXPERIÊNCIA</span>
+      <span class="mood-word mood-w-6">IMPACTO</span>
+      <span class="mood-word mood-w-7">RESPONSABILIDADE · CONSCIÊNCIA · VIDA</span>
+    </div>
+
+    <div class="ref-grid reveal reveal-delay-2">
+      <div class="ref-card">
+        <p class="ref-card-brand">Apple Keynote</p>
+        <p class="ref-card-desc">Minimalismo absoluto. Uma ideia por tela. Tipografia como protagonista. O produto fala por si.</p>
+      </div>
+      <div class="ref-card">
+        <p class="ref-card-brand">TED Talks</p>
+        <p class="ref-card-desc">O speaker é a marca. Autoridade pessoal no centro. Visual a serviço da mensagem, nunca o oposto.</p>
+      </div>
+      <div class="ref-card">
+        <p class="ref-card-brand">Netflix Documentary</p>
+        <p class="ref-card-desc">Color grading cinematográfico. Profundidade de campo. Luz dramática. Cada frame conta uma história.</p>
+      </div>
+      <div class="ref-card">
+        <p class="ref-card-brand">Porsche Branding</p>
+        <p class="ref-card-desc">Legado como diferencial. A história não é contada — é sentida. Elegância sem esforço visível.</p>
+      </div>
+      <div class="ref-card">
+        <p class="ref-card-brand">Volvo Campaigns</p>
+        <p class="ref-card-desc">Segurança como valor humano, não especificação técnica. Emoção racional. Confiança absoluta.</p>
+      </div>
+      <div class="ref-card">
+        <p class="ref-card-brand">McKinsey Premium</p>
+        <p class="ref-card-desc">Hierarquia de informação perfeita. Espaço negativo como respeito ao leitor. Dados com elegância.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ENCERRAMENTO
+═══════════════════════════════════════════ -->
+<section class="encerramento" id="encerramento">
+  <div class="enc-bg"></div>
+
+  <div class="enc-photo-area">
+    <div class="enc-photo-placeholder">
+      <!-- <img src="elson-final.jpg" style="width:100%;height:100%;object-fit:cover;filter:contrast(1.1) brightness(0.75) saturate(0.65);"> -->
+    </div>
+  </div>
+
+  <!-- Gold glow -->
+  <div style="position:absolute;bottom:0;left:40%;width:200px;height:400px;background:radial-gradient(ellipse at 50% 100%, rgba(184,146,42,0.08) 0%, transparent 70%);pointer-events:none;"></div>
+
+  <div class="enc-content reveal">
+    <p class="enc-label">Encerramento · Legado</p>
+
+    <div class="enc-number">30<span class="enc-number-plus">+</span></div>
+
+    <p class="enc-title">anos formando condutores<br>mais conscientes.</p>
+
+    <div class="gold-line"></div>
+
+    <p class="enc-tagline">
+      "Quem conhece o trânsito,<br>
+      conhece o <em>ser humano."</em>
+    </p>
+
+    <div style="margin-top:48px;">
+      <p style="font-size:10px;letter-spacing:3px;color:var(--muted-dark);text-transform:uppercase;">Elson Prado</p>
+      <p style="font-size:10px;letter-spacing:2px;color:var(--muted-dark);margin-top:4px;">Palestrante · Educador de Trânsito · Paraná</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTATO
+═══════════════════════════════════════════ -->
+<section class="contato" id="contato">
+  <div class="contato-inner">
+    <div class="contato-header">
+      <div class="section-tag reveal">08 — Contato</div>
+      <h2 class="contato-title reveal reveal-delay-1">
+        Vamos<br><em>conversar.</em>
+      </h2>
+    </div>
+
+    <div class="contato-channels reveal reveal-delay-2">
+      <a href="https://instagram.com/elsonprado.palestrante" class="channel" target="_blank" rel="noopener">
+        <div class="channel-left">
+          <span class="channel-num">01</span>
+          <div class="channel-info">
+            <p class="channel-label">Instagram</p>
+            <p class="channel-name">@elsonprado.palestrante</p>
+          </div>
+        </div>
+        <span class="channel-arrow">→</span>
+      </a>
+
+      <a href="https://wa.me/5541999999999" class="channel" target="_blank" rel="noopener">
+        <div class="channel-left">
+          <span class="channel-num">02</span>
+          <div class="channel-info">
+            <p class="channel-label">WhatsApp</p>
+            <p class="channel-name">(41) 99999-9999</p>
+          </div>
+        </div>
+        <span class="channel-arrow">→</span>
+      </a>
+
+      <a href="mailto:contato@elsonprado.com.br" class="channel">
+        <div class="channel-left">
+          <span class="channel-num">03</span>
+          <div class="channel-info">
+            <p class="channel-label">E-mail</p>
+            <p class="channel-name">contato@elsonprado.com.br</p>
+          </div>
+        </div>
+        <span class="channel-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="contato-footer reveal">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Elson Prado</div>
+        <div class="footer-brand-sub">Palestrante · Educador · Paraná</div>
+      </div>
+      <div class="footer-copy">
+        Brandbook Premium 2024<br>
+        Identidade Visual Exclusiva
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+// ── Progress bar ──────────────────────────────────────────
+const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = Math.min((scrollTop / docHeight) * 100, 100);
+  progressBar.style.width = pct + '%';
+});
+
+// ── Nav scroll ────────────────────────────────────────────
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── Mobile menu ───────────────────────────────────────────
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.menu-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// ── Scroll reveal ─────────────────────────────────────────
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── Particles ─────────────────────────────────────────────
+const particlesContainer = document.getElementById('particles');
+function createParticle() {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `
+    left: ${Math.random() * 100}%;
+    top: ${40 + Math.random() * 50}%;
+    --duration: ${6 + Math.random() * 8}s;
+    --delay: ${Math.random() * 6}s;
+    --max-opacity: ${0.15 + Math.random() * 0.35};
+  `;
+  particlesContainer.appendChild(p);
+}
+for (let i = 0; i < 28; i++) createParticle();
+
+// ── Parallax (hero) ───────────────────────────────────────
+const heroPhoto = document.querySelector('.hero-photo-placeholder, .hero-photo-img');
+window.addEventListener('scroll', () => {
+  const sy = window.scrollY;
+  if (sy < window.innerHeight && heroPhoto) {
+    heroPhoto.style.transform = `translateY(${sy * 0.25}px)`;
+  }
+}, { passive: true });
+
+// ── Frase background words — subtle parallax ──────────────
+document.querySelectorAll('.frase-bg-word, .frase-bg-num').forEach(el => {
+  const parent = el.closest('.frase-full, .frase-section');
+  if (!parent) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const handler = () => {
+          const rect = parent.getBoundingClientRect();
+          const ratio = -rect.top / window.innerHeight;
+          el.style.transform = `translateY(${ratio * 30}px) translateY(-50%)`;
+        };
+        window.addEventListener('scroll', handler, { passive: true });
+        obs.disconnect();
+      }
+    });
+  });
+  obs.observe(parent);
+});
+
+// ── Smooth anchor scroll ──────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ── Color swatch: click to copy hex ───────────────────────
+document.querySelectorAll('.color-swatch').forEach(sw => {
+  sw.style.cursor = 'pointer';
+  sw.addEventListener('click', () => {
+    const hex = sw.querySelector('.color-swatch-hex');
+    if (hex) {
+      navigator.clipboard?.writeText(hex.textContent.trim()).catch(() => {});
+    }
+  });
+});
+</script>
+</body>
+</html>
